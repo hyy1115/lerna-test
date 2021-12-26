@@ -6,11 +6,15 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
-    "publish": "lerna publish --conventional-commits --access=public --registry https://registry.npmjs.org/yytest"
+    "publish": "lerna publish --conventional-commits --yes"
   },
   "author": "yongyue.huang",
   "license": "ISC",
   "workspaces": [
     "packages/**"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/yytest"
+  }
 }

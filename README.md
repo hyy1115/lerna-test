@@ -87,7 +87,7 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
     lerna add lodash packages/hyy-pack-c --peer --exact
   ```
 
-- 发布npm包，这里我们测试发布到官方npm仓库
+- 发布npm包，这里我们测试发布到官方npm仓库 [lerna/publish文档](https://github.com/lerna/lerna/tree/main/commands/publish#publishconfigaccess)
  ```
     lerna publish
  ``` 
@@ -101,4 +101,3 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
     git commit -m 'test: xxx'
     ....
  ```
- 
