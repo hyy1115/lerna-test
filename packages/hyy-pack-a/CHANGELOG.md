@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.7](https://github.com/hyy1115/lerna-test/compare/hyy-pack-a@1.0.1...hyy-pack-a@1.1.7) (2021-12-26)
+
+**Note:** Version bump only for package hyy-pack-a
+
+
+
+
+
 ## [1.1.6](https://github.com/hyy1115/lerna-test/compare/@yytest/hyy-pack-a@1.1.5...@yytest/hyy-pack-a@1.1.6) (2021-12-26)
 
 **Note:** Version bump only for package @yytest/hyy-pack-a
