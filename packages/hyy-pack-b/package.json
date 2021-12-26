@@ -1,5 +1,5 @@
 {
-  "name": "@yytest/hyy-pack-b",
+  "name": "hyy-pack-b",
   "version": "1.1.6",
   "description": "> TODO: description",
   "author": "yongyue.huang <yongyue.huang@cmexpro.com>",
@@ -19,5 +19,5 @@
   "peerDependencies": {
     "lodash": "4.17.21"
   },
-  "gitHead": "ec7162260611309c5b19e197296c5867af3dd750"
+  "gitHead": "bc8bf12fd21486fae8e34384bb47cc585e35c539"
 }
