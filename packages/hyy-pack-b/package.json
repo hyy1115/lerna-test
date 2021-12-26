@@ -1,9 +1,9 @@
 {
   "name": "hyy-pack-b",
-  "version": "1.1.7",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "yongyue.huang <yongyue.huang@cmexpro.com>",
-  "homepage": "",
+  "homepage": "https://github.com/hyy1115/lerna-test#readme",
   "license": "ISC",
   "main": "lib/hyy-pack-b.js",
   "directories": {
@@ -13,11 +13,14 @@
   "files": [
     "lib"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyy1115/lerna-test.git"
+  },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "peerDependencies": {
-    "lodash": "4.17.21"
-  },
-  "gitHead": "bc8bf12fd21486fae8e34384bb47cc585e35c539"
+  "bugs": {
+    "url": "https://github.com/hyy1115/lerna-test/issues"
+  }
 }

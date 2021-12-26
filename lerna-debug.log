@@ -1,0 +1,13 @@
+0 silly argv {
+0 silly argv   _: [ 'create' ],
+0 silly argv   lernaVersion: '4.0.0',
+0 silly argv   '$0': '/usr/local/bin/lerna',
+0 silly argv   name: 'packages/hyy-pack-a'
+0 silly argv }
+1 notice cli v4.0.0
+2 verbose rootPath /Users/yongyue.huang/fe/lerna-test
+3 info versioning independent
+4 error TypeError: Cannot read properties of undefined (reading 'toLocaleLowerCase')
+4 error     at camelCase (/usr/local/lib/node_modules/lerna/node_modules/yargs-parser/build/index.cjs:8:15)
+4 error     at CreateCommand.initialize (/usr/local/lib/node_modules/lerna/node_modules/@lerna/create/index.js:63:22)
+4 error     at /usr/local/lib/node_modules/lerna/node_modules/@lerna/command/index.js:274:24
