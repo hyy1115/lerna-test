@@ -1,0 +1,15 @@
+{
+  "name": "lerna-test",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
+    "publish": "lerna publish --conventional-commits"
+  },
+  "author": "yongyue.huang",
+  "license": "ISC",
+  "workspaces": [
+    "packages/**"
+  ]
+}
