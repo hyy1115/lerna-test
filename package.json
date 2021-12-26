@@ -2,6 +2,7 @@
   "name": "lerna-test",
   "version": "1.0.0",
   "description": "",
+  "private": false,
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
