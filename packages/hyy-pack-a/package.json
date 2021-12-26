@@ -6,6 +6,7 @@
   "homepage": "",
   "license": "ISC",
   "main": "lib/hyy-pack-a.js",
+  "private": false,
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -19,5 +20,5 @@
   "peerDependencies": {
     "lodash": "4.17.21"
   },
-  "gitHead": "25aea923db5743a0e406ad76ad18694bf9ded1fe"
+  "gitHead": "75f0f90d24acf96f65a74c56116316161dde7f25"
 }
