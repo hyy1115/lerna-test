@@ -2,7 +2,7 @@
   "name": "lerna-test",
   "version": "1.0.0",
   "description": "",
-  "private": false,
+  "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
@@ -14,7 +14,6 @@
     "packages/**"
   ],
   "publishConfig": {
-    "access": "public",
     "registry": "https://registry.npmjs.org/"
   }
 }
