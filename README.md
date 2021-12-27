@@ -91,7 +91,7 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
     lerna add svelte packages/pack-test-a --exact
   ```
 
-- 修改ack-test-a.js
+- 修改pack-test-a.js
   ```javascript
   'use strict';
   import isDate from 'lodash/isDate';
