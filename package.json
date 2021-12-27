@@ -3,16 +3,13 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap --force-local --hoist",
+    "clean": "lerna clean --yes",
     "publish": "lerna publish --conventional-commits --yes"
   },
   "author": "yongyue.huang",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "dependencies": {
-    "lodash": "4.17.21",
-    "svelte": "3.44.3"
   }
 }

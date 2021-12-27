@@ -1,7 +1,11 @@
 'use strict';
 
+import hyyPackA from 'hyy-pack-a';
+
 module.exports = hyyPackB;
 
 function hyyPackB() {
-    // TODO
+    return hyyPackA();
 }
+
+hyyPackB();

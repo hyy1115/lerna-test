@@ -5,3 +5,4 @@ yarn.lock
 pnpm-lock.yaml
 package-lock.json
 lerna-debug.log
+pnpm-debug.log

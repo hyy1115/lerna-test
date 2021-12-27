@@ -21,19 +21,20 @@ npm i -g lerna@4.0.0
 
 ### 管理子package
 
-1、手动创建2个子package：hyy-pack-a, hyy-pack-b，每个package有独立的package.json文件来管理各自的version。
+1、创建子package：hyy-pack-a, package有独立的package.json文件来自己的version和其他配置。
 
-2、设置workspaces模式，因为每个package都有自己的package.json文件，如果workspaces为FALSE，则每个package都会安装node_modules。为了方便管理依赖包和减少重复安装，推荐使用workspaces：TRUE。这样只会在最外层有一个node_modules。
+2、设置pnpm安装模式：添加pnpm-workspace.yaml文件。
 
-在package.json文件设置
+- pnpm-workspace.yaml
 ```
-"workspaces": [
-    "packages/**"
-]
+packages:
+  # 所有在 packages子目录下的 package
+  - 'packages/**'
+  # 不包括在 test 文件夹下的 package
+  - '!**/__test__/**'
 ```
-在lerna.json文件设置
+- lerna.json
 ```
-"useWorkspaces": true,
 "npmClient": "pnpm"
 ```
 
@@ -60,12 +61,14 @@ npm i -g lerna@4.0.0
 
 ```
 "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "clean": "lerna clean",
-    "publish": "lerna publish"
+    "bootstrap": "lerna bootstrap --force-local --hoist",
+    "clean": "lerna clean --yes",
+    "publish": "lerna publish --conventional-commits --yes"
   }
 ```
-bootstrap和clean分别是安装依赖和卸载依赖，这里主要介绍一下publish。
+bootstrap: 安装依赖
+
+clean: 卸载依赖，只卸载子package的依赖
 
 lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna publish --help 查看。
 
@@ -76,21 +79,64 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
 
 - 添加新的package，自动生成package，并且type package.json文件
   ```
-    lerna create hyy-pack-c
+    lerna create hyy-pack-a
+    lerna create hyy-pack-b
   ```
 
-- 给所有文件添加lodash依赖，--exact表示固定版本号
+- 给所有package添加lodash依赖，---exact表示固定版本号
   ```
     lerna add lodash --exact
   ```
-  也可以给单个package添加依赖
+- 也可以给单个package添加依赖，使用lerna管理package的依赖
   ```
-    lerna add lodash packages/hyy-pack-c --exact
+    lerna add svelte packages/hyy-pack-a --exact
+    lerna add react packages/hyy-pack-b --exact
+  ```
+
+- 修改hyy-pack-a.js
+  ```javascript
+  'use strict';
+
+  import isDate from 'lodash/isDate';
+
+  module.exports = hyyPackA;
+
+  function hyyPackA() {
+      const time = new Date();
+      console.log('is Date-------', isDate(time));
+  }
+  ```
+
+- 在hyy-pack-b.js引入hyy-pack-b的npm包，因为这个时候还没有发版，所以所以需要手动添加dependencies
+  
+  ```
+    "dependencies": {
+      "hyy-pack-a": "1.0.0"
+    }
+  ```
+  如果已经发布过hyy-pack-a的npm包，则可以通过下面的命令添加
+  ```
+    lerna add hyy-pack-a packages/hyy-pack-b --exact
+  ```
+
+  - 修改hyy-pack-b.js文件
+  ```javascript
+  'use strict';
+
+  import hyyPackA from 'hyy-pack-a';
+
+  module.exports = hyyPackB;
+
+  function hyyPackB() {
+      return hyyPackA();
+  }
+
+  hyyPackB();
   ```
 
 - 发布npm包，这里我们测试发布到官方npm仓库 [lerna/publish文档](https://github.com/lerna/lerna/tree/main/commands/publish#publishconfigaccess)
  ```
-    lerna publish
+  lerna publish
  ``` 
 
  发布之前，我们需要git commit，记住，不需要push，因为lerna会自动帮你做这个操作，commit需要遵守规范（不遵守则无法发布）：[conventionalcommits](https://www.conventionalcommits.org/zh-hans/v1.0.0/)，下面是规范的demo
@@ -102,3 +148,10 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
     git commit -m 'test: xxx'
     ....
  ```
+
+- 发布单个package，先测试发布hyy-pack-a
+  ```
+    lerna publish --conventional-commits --yes --contents packages/hyy-pack-a
+  ```
+
+ 查看发布好的public npm 包：[npm packages](https://www.npmjs.com/settings/yongyue/packages)

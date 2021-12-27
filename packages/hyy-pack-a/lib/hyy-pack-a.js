@@ -1,10 +1,11 @@
 'use strict';
-import isEmpty from 'lodash/isEmpty';
+
+import isDate from 'lodash/isDate';
 
 module.exports = hyyPackA;
 
 function hyyPackA() {
     // TODO
-    const a = null;
-    console.log('a----', isEmpty(a));
+    const time = new Date();
+    console.log('is Date-------', isDate(time));
 }
