@@ -5,7 +5,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap --force-local",
     "clean": "lerna clean --yes",
-    "publish": "lerna publish --conventional-commits --yes"
+    "publish": "lerna publish --conventional-commits --yes --exact"
   },
   "author": "yongyue.huang",
   "publishConfig": {
