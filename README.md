@@ -66,7 +66,7 @@ packages:
     "publish": "lerna publish --conventional-commits --yes"
   }
 ```
-bootstrap: 安装依赖
+bootstrap: 安装依赖，一般在第一次clone项目的时候执行一遍
 
 clean: 卸载依赖，只卸载子package的依赖
 
@@ -86,7 +86,7 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
   ```
     lerna add lodash --exact
   ```
-- 也可以给单个package添加依赖，使用lerna管理package的依赖
+- 也可以给指定的package添加依赖，使用lerna管理package的依赖
   ```
     lerna add svelte packages/pack-test-a --exact
   ```
