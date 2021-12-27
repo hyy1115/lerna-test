@@ -7,6 +7,7 @@
 - npm包管理
 - monorepo架构管理（全称Monorepository：单一存储库）
   
+<a href="https://www.icode9.com/i/ll/?i=1d2a2dc0d73743da83af7d1f5713a26f.png" target="_blank"><img src="https://www.icode9.com/i/ll/?i=1d2a2dc0d73743da83af7d1f5713a26f.png"></a>
 
 **安装方式**
 
@@ -82,9 +83,9 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
   ```
     lerna add lodash --exact
   ```
-  也可以给单个package添加依赖，--peer全称是peerDependencies，他的作用是将所有安装的依赖拍平管理。在npm安装的模式中，他很有用，可以避免node_modules多层嵌套node_modules的问题，但在pnpm模式下，他的作用并不存在
+  也可以给单个package添加依赖
   ```
-    lerna add lodash packages/hyy-pack-c --peer --exact
+    lerna add lodash packages/hyy-pack-c --exact
   ```
 
 - 发布npm包，这里我们测试发布到官方npm仓库 [lerna/publish文档](https://github.com/lerna/lerna/tree/main/commands/publish#publishconfigaccess)

@@ -22,8 +22,5 @@
   },
   "bugs": {
     "url": "https://github.com/hyy1115/lerna-test/issues"
-  },
-  "dependencies": {
-    "lodash": "4.17.21"
   }
 }
