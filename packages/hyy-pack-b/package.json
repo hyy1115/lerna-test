@@ -27,5 +27,6 @@
     "hyy-pack-a": "^1.2.0",
     "lodash": "4.17.21",
     "react": "17.0.2"
-  }
+  },
+  "gitHead": "c37afc0bb395dbc4755a0a91de0152fc19fa1914"
 }

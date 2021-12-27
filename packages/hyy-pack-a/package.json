@@ -26,5 +26,6 @@
   "dependencies": {
     "lodash": "4.17.21",
     "svelte": "3.44.3"
-  }
+  },
+  "gitHead": "c37afc0bb395dbc4755a0a91de0152fc19fa1914"
 }

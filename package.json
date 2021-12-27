@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "bootstrap": "lerna bootstrap --force-local --hoist",
+    "bootstrap": "lerna bootstrap --force-local",
     "clean": "lerna clean --yes",
     "publish": "lerna publish --conventional-commits --yes"
   },
