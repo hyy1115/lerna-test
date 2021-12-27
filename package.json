@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "bootstrap": "lerna bootstrap --force-local",
-    "clean": "lerna clean --yes",
-    "publish": "lerna publish --conventional-commits --yes --exact"
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
+    "publish": "lerna publish"
   },
   "author": "yongyue.huang",
   "publishConfig": {

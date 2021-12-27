@@ -3,5 +3,19 @@
   "packages": [
     "packages/**"
   ],
+  "command": {
+    "bootstrap": {
+      "hoist": true,
+      "forceLocal": true
+    },
+    "clean": {
+      "yes": true
+    },
+    "publish": {
+      "conventionalCommits": true,
+      "yes": true,
+      "exact": true
+    }
+  },
   "version": "independent"
 }
