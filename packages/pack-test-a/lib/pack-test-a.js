@@ -1,11 +1,9 @@
 'use strict';
-
 import isDate from 'lodash/isDate';
 
-module.exports = hyyPackA;
+module.exports = packTestA;
 
-function hyyPackA() {
-    // TODO
+function packTestA() {
     const time = new Date();
     console.log('is Date-------', isDate(time));
 }

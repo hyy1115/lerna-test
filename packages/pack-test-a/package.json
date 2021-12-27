@@ -1,11 +1,11 @@
 {
-  "name": "hyy-pack-a",
-  "version": "1.2.4",
+  "name": "pack-test-a",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "yongyue.huang <yongyue.huang@cmexpro.com>",
   "homepage": "https://github.com/hyy1115/lerna-test#readme",
   "license": "ISC",
-  "main": "lib/hyy-pack-a.js",
+  "main": "lib/pack-test-a.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -22,10 +22,5 @@
   },
   "bugs": {
     "url": "https://github.com/hyy1115/lerna-test/issues"
-  },
-  "dependencies": {
-    "lodash": "4.17.21",
-    "svelte": "3.44.3"
-  },
-  "gitHead": "905c12dbbafbbb5cef9afd3069294427716ecf70"
+  }
 }

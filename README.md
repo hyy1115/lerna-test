@@ -61,7 +61,7 @@ packages:
 
 ```
 "scripts": {
-    "bootstrap": "lerna bootstrap --force-local --hoist",
+    "bootstrap": "lerna bootstrap --force-local",
     "clean": "lerna clean --yes",
     "publish": "lerna publish --conventional-commits --yes"
   }
@@ -79,8 +79,7 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
 
 - 添加新的package，自动生成package，并且type package.json文件
   ```
-    lerna create hyy-pack-a
-    lerna create hyy-pack-b
+    lerna create pack-test-a
   ```
 
 - 给所有package添加lodash依赖，---exact表示固定版本号
@@ -89,25 +88,46 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
   ```
 - 也可以给单个package添加依赖，使用lerna管理package的依赖
   ```
-    lerna add svelte packages/hyy-pack-a --exact
-    lerna add react packages/hyy-pack-b --exact
+    lerna add svelte packages/pack-test-a --exact
   ```
 
-- 修改hyy-pack-a.js
+- 修改ack-test-a.js
   ```javascript
   'use strict';
-
   import isDate from 'lodash/isDate';
 
-  module.exports = hyyPackA;
+  module.exports = packTestA;
 
-  function hyyPackA() {
+  function packTestA() {
       const time = new Date();
       console.log('is Date-------', isDate(time));
   }
   ```
 
-- 在hyy-pack-b.js引入hyy-pack-b的npm包，因为这个时候还没有发版，所以所以需要手动添加dependencies
+- 发布npm包，这里我们测试发布到官方npm仓库 [lerna/publish文档](https://github.com/lerna/lerna/tree/main/commands/publish#publishconfigaccess)
+ ```
+  lerna publish
+ ``` 
+
+ 发布之前，我们需要git commit，记住，不需要push，因为lerna会自动帮你做这个操作，commit需要遵守规范（不遵守则无法发布）：[conventionalcommits](https://www.conventionalcommits.org/zh-hans/v1.0.0/)，下面是规范的demo
+ ```
+    git commit -m 'fix: xxx'
+    git commit -m 'feat: xxx'
+    git commit -m 'docs: xxx'
+    git commit -m 'style: xxx'
+    git commit -m 'test: xxx'
+    ....
+ ```
+
+- 发布单个package，先测试发布hyy-pack-a
+  ```
+    lerna publish --conventional-commits --yes --contents packages/hyy-pack-a
+  ```
+
+ 查看发布好的public npm 包：[npm packages](https://www.npmjs.com/settings/yongyue/packages)
+
+
+ - 在hyy-pack-b.js引入hyy-pack-b的npm包，因为这个时候还没有发版，所以所以需要手动添加dependencies
   
   ```
     "dependencies": {
@@ -133,25 +153,3 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
 
   hyyPackB();
   ```
-
-- 发布npm包，这里我们测试发布到官方npm仓库 [lerna/publish文档](https://github.com/lerna/lerna/tree/main/commands/publish#publishconfigaccess)
- ```
-  lerna publish
- ``` 
-
- 发布之前，我们需要git commit，记住，不需要push，因为lerna会自动帮你做这个操作，commit需要遵守规范（不遵守则无法发布）：[conventionalcommits](https://www.conventionalcommits.org/zh-hans/v1.0.0/)，下面是规范的demo
- ```
-    git commit -m 'fix: xxx'
-    git commit -m 'feat: xxx'
-    git commit -m 'docs: xxx'
-    git commit -m 'style: xxx'
-    git commit -m 'test: xxx'
-    ....
- ```
-
-- 发布单个package，先测试发布hyy-pack-a
-  ```
-    lerna publish --conventional-commits --yes --contents packages/hyy-pack-a
-  ```
-
- 查看发布好的public npm 包：[npm packages](https://www.npmjs.com/settings/yongyue/packages)

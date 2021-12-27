@@ -1,11 +1,11 @@
-# `hyy-pack-b`
+# `pack-test-a`
 
 > TODO: description
 
 ## Usage
 
 ```
-const hyyPackB = require('hyy-pack-b');
+const packTestA = require('pack-test-a');
 
 // TODO: DEMONSTRATE API
 ```
