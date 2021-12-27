@@ -21,7 +21,7 @@ npm i -g lerna@4.0.0
 
 ### 管理子package
 
-1、创建子package：hyy-pack-a, package有独立的package.json文件来自己的version和其他配置。
+1、创建子package：pack-test-a, package有独立的package.json文件来自己的version和其他配置。
 
 2、设置pnpm安装模式：添加pnpm-workspace.yaml文件。
 
