@@ -146,12 +146,12 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
   packTestB();
   ```
 
-  - 发布单个package，比如发布 pack-test-a
+  - 发布单个package，比如发布 pack-test-b
   ```
-    lerna publish --conventional-commits --yes --contents packages/pack-test-a
+    lerna publish --conventional-commits --yes --contents packages/pack-test-b
   ```
 
-  - 全量发布
+    - 全量发布
   ```
     lerna publish --conventional-commits --yes
   ```
