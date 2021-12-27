@@ -119,37 +119,39 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
     ....
  ```
 
-- 发布单个package，先测试发布hyy-pack-a
-  ```
-    lerna publish --conventional-commits --yes --contents packages/hyy-pack-a
-  ```
-
  查看发布好的public npm 包：[npm packages](https://www.npmjs.com/settings/yongyue/packages)
 
-
- - 在hyy-pack-b.js引入hyy-pack-b的npm包，因为这个时候还没有发版，所以所以需要手动添加dependencies
-  
+- 添加新的package：pack-test-b
   ```
-    "dependencies": {
-      "hyy-pack-a": "1.0.0"
-    }
-  ```
-  如果已经发布过hyy-pack-a的npm包，则可以通过下面的命令添加
-  ```
-    lerna add hyy-pack-a packages/hyy-pack-b --exact
+  lerna create pack-test-b
   ```
 
-  - 修改hyy-pack-b.js文件
+ - 在pack-test-b.js引入pack-test-a的npm包
+  ```
+    lerna add pack-test-a packages/pack-test-b --exact
+  ```
+
+  - 修改pack-test-b.js文件
   ```javascript
   'use strict';
 
-  import hyyPackA from 'hyy-pack-a';
+  import packTestA from 'pack-test-a';
 
-  module.exports = hyyPackB;
+  module.exports = packTestB;
 
-  function hyyPackB() {
-      return hyyPackA();
+  function packTestB() {
+      return packTestA();
   }
 
-  hyyPackB();
+  packTestB();
+  ```
+
+  - 发布单个package，比如发布 pack-test-a
+  ```
+    lerna publish --conventional-commits --yes --contents packages/pack-test-a
+  ```
+
+  - 全量发布
+  ```
+    lerna publish --conventional-commits --yes
   ```
