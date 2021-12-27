@@ -25,5 +25,6 @@
   },
   "dependencies": {
     "pack-test-a": "1.1.0"
-  }
+  },
+  "gitHead": "d5c422c52f18c9e327d383fcb68030c751e592b4"
 }
