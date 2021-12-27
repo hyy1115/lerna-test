@@ -1,9 +1,10 @@
 'use strict';
+import isEmpty from 'lodash/isEmpty';
 
 module.exports = hyyPackA;
 
 function hyyPackA() {
     // TODO
-    const a = 1;
-    console.log('a----', a);
+    const a = null;
+    console.log('a----', isEmpty(a));
 }

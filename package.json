@@ -1,7 +1,6 @@
 {
   "name": "lerna-test",
   "version": "1.0.0",
-  "description": "",
   "private": false,
   "scripts": {
     "bootstrap": "lerna bootstrap",
@@ -9,9 +8,8 @@
     "publish": "lerna publish --conventional-commits --yes"
   },
   "author": "yongyue.huang",
-  "license": "ISC",
   "workspaces": [
-    "packages/**"
+    "packages/*"
   ],
   "publishConfig": {
     "access": "public",
