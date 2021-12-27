@@ -146,7 +146,8 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
   packTestB();
   ```
 
-    - 全量发布
+    
+  - 全量发布
   ```
     lerna publish --conventional-commits --yes
   ```
