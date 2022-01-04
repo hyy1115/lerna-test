@@ -77,7 +77,7 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
 
 # 演示
 
-- 添加新的package，自动生成package，并且type package.json文件
+- 添加新的package，自动生成package，并且生成 package.json文件
   ```
     lerna create pack-test-a
   ```
