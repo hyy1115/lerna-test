@@ -119,6 +119,9 @@ lerna publish [bump] Options: publish的可选项非常多，可以通过 lerna 
     ....
  ```
 
+ publish操作会自动给当前包版本打个tag
+ 
+
  查看发布好的public npm 包：[npm packages](https://www.npmjs.com/settings/yongyue/packages)
 
 - 添加新的package：pack-test-b
